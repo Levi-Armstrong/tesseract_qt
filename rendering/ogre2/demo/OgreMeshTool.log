@@ -1,0 +1,2 @@
+22:43:40: OGRE EXCEPTION(6:FileNotFoundException): 'plugins_tools.cfg' file not found! in ConfigFile::load at /var/lib/jenkins/workspace/ogre-2.2-debbuilder/repo/OgreMain/src/OgreConfigFile.cpp (line 91)
+22:43:40: OGRE EXCEPTION(1:InvalidStateException): Cannot initialise - no render system has been selected. in Root::initialise at /var/lib/jenkins/workspace/ogre-2.2-debbuilder/repo/OgreMain/src/OgreRoot.cpp (line 747)

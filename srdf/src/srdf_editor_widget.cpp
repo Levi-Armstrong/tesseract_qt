@@ -26,6 +26,7 @@
 #include <tesseract_common/resource_locator.h>
 #include <tesseract_srdf/srdf_model.h>
 #include <tesseract_environment/environment.h>
+#include <tesseract_environment/commands/add_contact_managers_plugin_info_command.h>
 #include <tesseract_collision/core/types.h>
 #include <tesseract_collision/core/common.h>
 #include <tesseract_scene_graph/joint.h>
@@ -141,6 +142,20 @@ void SRDFEditorWidget::onLoad(const QString& urdf_filepath, const QString& srdf_
 
   if (this->data_->env)
   {
+    // Check if it has a contact managers
+    if (this->data_->env->getDiscreteContactManager() == nullptr)
+    {
+      tesseract_common::ContactManagersPluginInfo plugin_info = this->data_->env->getContactManagersPluginInfo();
+      plugin_info.search_libraries.insert("tesseract_collision_bullet_factories");
+      plugin_info.discrete_plugin_infos.default_plugin = "BulletDiscreteBVHManager";
+      tesseract_common::PluginInfo info;
+      info.class_name = "BulletDiscreteBVHManagerFactory";
+      plugin_info.discrete_plugin_infos.plugins["BulletDiscreteBVHManager"] = info;
+
+      auto cmd = std::make_shared<tesseract_environment::AddContactManagersPluginInfoCommand>(plugin_info);
+      this->data_->env->applyCommand(cmd);
+    }
+
     // Clear Models
     this->data_->joint_model.setStringList(QStringList());
     this->data_->link_model.setStringList(QStringList());

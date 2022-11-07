@@ -1,0 +1,30 @@
+
+@property( vct_num_probes )
+
+@piece( DeclVctStruct )
+	struct VctProbeParams
+	{
+		float4 vctResolution; // .w is padding
+
+		float specSdfMaxMip;
+		float specularSdfFactor;
+		float blendFade;
+		float multiplier;
+
+		float4 ambientUpperHemi; // .w is padding
+		float4 ambientLowerHemi; // .w is padding
+
+		float4 xform_row0;
+		float4 xform_row1;
+		float4 xform_row2;
+
+		float4 invXform_row0;
+		float4 invXform_row1;
+		float4 invXform_row2;
+	};
+@end
+@piece( DeclVctUniform )
+	VctProbeParams vctProbeParams;
+@end
+
+@end
