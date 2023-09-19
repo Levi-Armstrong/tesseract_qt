@@ -20,17 +20,27 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
+<<<<<<< HEAD:command_language/include/tesseract_qt/command_language/models/cartesian_waypoint_standard_item.h
 #ifndef TESSERACT_QT_COMMAND_LANGUAGE_CARTESIAN_WAYPOINT_STANDARD_ITEM_H
 #define TESSERACT_QT_COMMAND_LANGUAGE_CARTESIAN_WAYPOINT_STANDARD_ITEM_H
+=======
+#ifndef TESSERACT_QT_PLANNING_TASK_COMPOSER_CONTEXT_STANDARD_ITEM_H
+#define TESSERACT_QT_PLANNING_TASK_COMPOSER_CONTEXT_STANDARD_ITEM_H
+>>>>>>> Update to use TaskComposerContext (#74):planning/include/tesseract_qt/planning/task_composer_context_standard_item.h
 
 #include <QStandardItem>
 
 namespace tesseract_planning
 {
+<<<<<<< HEAD:command_language/include/tesseract_qt/command_language/models/cartesian_waypoint_standard_item.h
 class CartesianWaypointPoly;
+=======
+class TaskComposerContext;
+>>>>>>> Update to use TaskComposerContext (#74):planning/include/tesseract_qt/planning/task_composer_context_standard_item.h
 }
 namespace tesseract_gui
 {
+<<<<<<< HEAD:command_language/include/tesseract_qt/command_language/models/cartesian_waypoint_standard_item.h
 class CartesianWaypointStandardItem : public QStandardItem
 {
 public:
@@ -47,3 +57,21 @@ private:
 }  // namespace tesseract_gui
 
 #endif  // TESSERACT_QT_COMMAND_LANGUAGE_CARTESIAN_WAYPOINT_STANDARD_ITEM_H
+=======
+class TaskComposerContextStandardItem : public QStandardItem
+{
+public:
+  explicit TaskComposerContextStandardItem(const tesseract_planning::TaskComposerContext& context);
+  TaskComposerContextStandardItem(const QString& text, const tesseract_planning::TaskComposerContext& context);
+  TaskComposerContextStandardItem(const QIcon& icon,
+                                  const QString& text,
+                                  const tesseract_planning::TaskComposerContext& context);
+  int type() const override;
+
+private:
+  void ctor(const tesseract_planning::TaskComposerContext& context);
+};
+}  // namespace tesseract_gui
+
+#endif  // TESSERACT_QT_PLANNING_TASK_COMPOSER_CONTEXT_STANDARD_ITEM_H
+>>>>>>> Update to use TaskComposerContext (#74):planning/include/tesseract_qt/planning/task_composer_context_standard_item.h
