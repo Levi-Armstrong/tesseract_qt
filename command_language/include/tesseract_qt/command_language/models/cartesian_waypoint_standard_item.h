@@ -28,14 +28,14 @@
 #define TESSERACT_QT_PLANNING_TASK_COMPOSER_CONTEXT_STANDARD_ITEM_H
 >>>>>>> Update to use TaskComposerContext (#74):planning/include/tesseract_qt/planning/task_composer_context_standard_item.h
 
-#include <QStandardItem>
+    #include < QStandardItem>
 
-namespace tesseract_planning
+    namespace tesseract_planning
 {
 <<<<<<< HEAD:command_language/include/tesseract_qt/command_language/models/cartesian_waypoint_standard_item.h
-class CartesianWaypointPoly;
+  class CartesianWaypointPoly;
 =======
-class TaskComposerContext;
+  class TaskComposerContext;
 >>>>>>> Update to use TaskComposerContext (#74):planning/include/tesseract_qt/planning/task_composer_context_standard_item.h
 }
 namespace tesseract_gui
